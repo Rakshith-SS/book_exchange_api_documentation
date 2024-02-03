@@ -47,3 +47,23 @@
             }
         }
     ````
+
+### Book Exchange Module
+
+1.  Request for Book Exchange
+    Description - Request for book access from a issuer
+    ````
+        REQUEST URL: {{HOST}}/book-listing/request-for-book/
+        REQUEST METHOD: POST
+        REQUEST PAYLOAD: 
+        {
+            "user_id": 2,
+            "book_id": 1
+        }
+        RESPONSE: 
+        {
+            "message": "success"
+        }
+    ````
+
+
