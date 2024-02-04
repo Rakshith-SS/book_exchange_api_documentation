@@ -48,14 +48,17 @@
         }
     ````
 
+
+
 ### Book Exchange Module
 
 1.  Request for Book Exchange
-    Description - Request for book access from a issuer
+    Description - Request for book access from a issuer <br>
+    REQUEST URL: ```{{HOST}}/book-listing/request-for-book/ ``` <br>
+    REQUEST METHOD:  ```POST``` 
+
     ````
-        REQUEST URL: {{HOST}}/book-listing/request-for-book/
-        REQUEST METHOD: POST
-        REQUEST PAYLOAD: 
+       REQUEST PAYLOAD: 
         {
             "user_id": 2,
             "book_id": 1
@@ -66,4 +69,46 @@
         }
     ````
 
+2. Get Approval List of books
+    Description - Get a list of pending approvals
+    ```
+        REQUEST URL: {{HOST}}/book-listing/approval-list/
+        REQUEST METHOD: GET
+        RESPONSE: 
+            {
+            "message": "success",
+            "data": [
+                {
+                    "request_id": "7821e2f2bf0d45a0a7f18853d54b6b1e",
+                    "created_at": "2024-02-03T13:24:55.494955Z",
+                    "updated_at": "2024-02-03T13:24:55.494986Z",
+                    "book_name": "Rich Dad, Poor Dad",
+                    "added_by_user_ids": [
+                        2
+                    ],
+                    "description": "Book About Investing",
+                    "added_by_users": [
+                        "Rakshith"
+                    ],
+                    "rating": 4,
+                    "id": 4
+                }
+                ]
+            }
+    ```
 
+3. Approve a book for exchange
+    Description - Approve a book for exchange and deduct coins from borrowers wallet.
+    ```
+    REQUEST URL: {{HOST}}/book-listing/approval-list/
+    REQUEST METHOD: GET
+    REQUEST HEADERS: Authorization Beare {{token}}
+    REQUEST PAYLOAD:
+    {
+        "request_id": "dafd770432b34ec3a14f22fdd67f341f"
+    }
+    RESPONSE:
+    {
+        "message": "success"
+    }
+    ```
