@@ -52,25 +52,25 @@
 
 ### Book Exchange Module
 
-1.  Request for Book Exchange
-    Description - Request for book access from a issuer <br>
-    REQUEST URL: ```{{HOST}}/book-listing/request-for-book/ ``` <br>
-    REQUEST METHOD:  ```POST``` 
-
+1.  Request for Book Exchange <br>
+    **Description** - Request for book access from a issuer 
+    ```
+    REQUEST URL: {{HOST}}/book-listing/request-for-book/
+    REQUEST METHOD:  POST
+    REQUEST HEADERS: Authorization Bearer {{token}}
+    REQUEST PAYLOAD: 
+     {
+         "user_id": 2,
+         "book_id": 1
+     }
+     RESPONSE: 
+     {
+         "message": "success"
+     }
     ````
-       REQUEST PAYLOAD: 
-        {
-            "user_id": 2,
-            "book_id": 1
-        }
-        RESPONSE: 
-        {
-            "message": "success"
-        }
-    ````
 
-2. Get Approval List of books
-    Description - Get a list of pending approvals
+2. Get Approval List of books <br>
+    **Description** - Get a list of pending approvals
     ```
         REQUEST URL: {{HOST}}/book-listing/approval-list/
         REQUEST METHOD: GET
@@ -97,7 +97,7 @@
             }
     ```
 
-3. Approve a book for exchange
+3. **Approve a book for exchange** <br>
     Description - Approve a book for exchange and deduct coins from borrowers wallet.
     ```
     REQUEST URL: {{HOST}}/book-listing/approval-list/
